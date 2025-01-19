@@ -1,14 +1,14 @@
+import TodoList from "./components/TodoList"
 
 
 
 
 function App() {
 
-
   return (
-   <div>
-
-   </div>
+    <div>
+    <TodoList />
+    </div>
   )
 }
 
