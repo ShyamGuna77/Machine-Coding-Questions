@@ -31,6 +31,7 @@ function App() {
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
       <button onClick={reset}>Reset</button>
+      <button onClick={() => setCount(count+2)}>Double</button>
     </div>
   );
 }
