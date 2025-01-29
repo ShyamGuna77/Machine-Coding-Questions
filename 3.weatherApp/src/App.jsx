@@ -22,6 +22,7 @@ function WeatherApp() {
         )}&appid=${API_KEY}&units=metric`
       );
       setWeatherData(response.data);
+      console.log(response.data);
     } catch (error) {
       setError("Failed to fetch weather data");
       console.log(error.message);
@@ -36,8 +37,9 @@ function WeatherApp() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setCity('')
-    fetchWeatherData();
+    setCity(" ")
+ 
+    
    
   }
 
@@ -56,7 +58,7 @@ function WeatherApp() {
           className="focus:outline-none px-4 py-2 shadow-lg focus:ring-2 focus:ring-blue-500 rounded-md m-2 bg-slate-100 text-gray-500"
         />
         <button
-          type="submit"
+          onClick={fetchWeatherData}
           className="bg-blue-500 px-4 py-2 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
         >
           Search
@@ -77,7 +79,7 @@ function WeatherApp() {
 
           {/* 5-day forecast */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-            {weatherData.list.slice(0, 5).map((day, index) => (
+            {weatherData.list.slice(0,5).map((day, index) => (
               <div
                 key={index}
                 className="bg-slate-100 p-4 rounded-md shadow-md text-center"
