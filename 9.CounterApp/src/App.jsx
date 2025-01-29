@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(()=>{
+    const storedCount = localStorage.getItem("count")
+    return storedCount ? JSON.parse(storedCount): 0;
+  })
 
   function increment(){
     setCount(prev => prev+1)
@@ -12,8 +15,14 @@ function App() {
   }
 
   function reset(){
-    setCount(0)
+    setCount(0);
   }
+  useEffect(() => {
+    localStorage.setItem("count",JSON.stringify(count))
+  },[count])
+
+
+
 
   return (
     <div>
