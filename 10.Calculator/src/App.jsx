@@ -11,12 +11,12 @@ function reducer (state,action) {
         return {...state, current :action.payload, overwrite:false ,expression:action.payload}
       }
 
-      if(action.payload === 0 && state.current === 0) return state 
-      if(action.payload === 0 && state.current.includes('.')) return state
+      if(action.payload === "0" && state.current === "0") return state 
+      if(action.payload === "." && state.current.includes('.')) return state
 
       return {
         ...state ,
-        current:state.current === 0 ? action.payload : state.current+ action.payload,
+        current:state.current === "0" ? action.payload : state.current+ action.payload,
         expression : state.current+action.payload
       }
 
