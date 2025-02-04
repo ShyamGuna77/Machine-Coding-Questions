@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react'
+import MealItem from './MealItem'
 
 const Meals = () => {
 const [fetchData, setfetchData] = useState([])
@@ -24,7 +25,7 @@ const [fetchData, setfetchData] = useState([])
        
           {fetchData.map((meal)=>(
             <li key={meal.id}>
-                {meal.name}
+               <MealItem meal = {meal}/>
             </li>
           ))}
 

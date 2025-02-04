@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "../assets/logo.jpg"
+import Button from './UI/Button';
 const Navbar = () => {
   return <header id="main-header">
   <div id='title'>
@@ -9,7 +10,7 @@ const Navbar = () => {
     </h1>
     </div>
     <nav>
-    <button>Cart(0)</button>
+    <Button textOnly={true}>Cart(0)</Button>
     </nav>
   </header>;
     
