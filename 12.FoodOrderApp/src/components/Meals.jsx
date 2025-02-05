@@ -24,9 +24,8 @@ const [fetchData, setfetchData] = useState([])
         <ul id='meals'>
        
           {fetchData.map((meal)=>(
-            <li key={meal.id}>
-               <MealItem meal = {meal}/>
-            </li>
+
+               <MealItem key= {meal.id} meal = {meal}/>
           ))}
 
         </ul>
@@ -34,4 +33,4 @@ const [fetchData, setfetchData] = useState([])
   )
 }
 
-export default Meals
+export default Meals;

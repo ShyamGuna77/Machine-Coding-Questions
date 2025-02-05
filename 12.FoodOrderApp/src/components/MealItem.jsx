@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { currencyFormatter } from '../util/formatting';
 import Button from './UI/Button';
+import cartContext from '../store/CartContext';
 
 const MealItem = ({meal}) => {
+
+    const cartCtx = useContext(cartContext)
+
+    function handleAddItem() {
+        cartCtx.addItem(meal);
+    }
   return (
+    <>
     <li className="meal-item">
       <article>
         <img src={`http://localhost:3000/${meal.image}`} alt="Menu Pic" />
@@ -13,10 +21,11 @@ const MealItem = ({meal}) => {
           <p className="meal-item-description">{meal.description}</p>
         </div>
         <p className="meal-item-actions">
-          <Button >Add to Cart</Button>
+          <Button onClick={handleAddItem}>Add to Cart</Button>
         </p>
       </article>
     </li>
+    </>
   );
 }
 
