@@ -1,17 +1,21 @@
 import Meals from "./components/Meals";
 import Navbar from "./components/Navbar";
 import { CartContextProvider } from "./store/CartContext";
+import { UserProgressContextProvider } from "./store/UserProgressContext";
+import Cart from "./components/Cart";
 
 
 
 function App() {
   return (
     <>
-    <CartContextProvider>
-    <Navbar />
-    <Meals />
-    </CartContextProvider>
-   
+      <UserProgressContextProvider>
+        <CartContextProvider>
+          <Navbar />
+          <Meals />
+          <Cart />
+        </CartContextProvider>
+      </UserProgressContextProvider>
     </>
   );
 }
