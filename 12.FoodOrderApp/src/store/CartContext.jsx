@@ -72,8 +72,7 @@ export function CartContextProvider({ children }) {
     removeItem,
   };
 
-  console.log("Cart state:", cart); // ✅ Logs the actual cart state
-  console.log("Context value:", contextValue); // ✅ Logs the provided context data
+  
 
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
